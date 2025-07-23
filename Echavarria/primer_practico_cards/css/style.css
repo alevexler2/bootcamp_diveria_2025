@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Oswald', sans-serif;
+    box-sizing: border-box;
+}
+
+:root {
+  --color-text: #ffffff;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    margin-top:10rem;
+}
+
+.container__img {
+    background-size: cover;
+    background-position: top;
+
+    margin: 1.5rem;
+
+    border-radius: 0.75rem;
+    box-shadow: black 10px 10px 10px 0px;
+}
+
+.container__img1{
+    background-image: url('../img/Lionel-Messi-Argentina.jpeg');
+}
+
+.container__img2{
+    background-image: url('../img/Rodigo-DePaul-Argentina.jpeg');
+}
+
+.container__img3{
+    background-image: url('../img/Julian-Alvarez-Argentina.jpeg');
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    width: 400px;
+    height: 450px;
+}
+
+.card__title,
+.card__description {
+    display: none;
+    color: var(--color-text);
+}
+
+.card:hover {
+    border-radius: 0.75rem;
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.437);
+
+    .card__title{
+        display: flex;
+        justify-content: end;
+        flex-direction: row;
+        align-items: end;
+        font-size: 1.25rem;
+        font-weight: bolder;
+    }
+    .card__description{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .card__description p{
+        margin: 0.5rem;
+    }
+    .card__description ul li{
+        
+        margin-left: 20px;
+    }
+}
+
+.container__img1:hover,
+.container__img2:hover,
+.container__img3:hover {
+    transform: scale(1.05);
+    background-image: rgba(0, 0, 0, 0.437);
+    transition: 0.5s;
+}
+
+.container__img1:hover{
+    background-image: url('../img/Lionel-Messi-Argentina-CopaDelMundo.jpeg');
+}
+
+.container__img2:hover{
+    background-image: url('../img/Rodigo-DePaul-Argentina-CopaDelMundo.jpeg');
+}
+
+.container__img3:hover{
+    background-image: url('../img/Julian-Alvarez-Argentina-CopaDelMundo.jpg');
+}
