@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="48"
+   height="48"
+   viewBox="0 0 12.7 12.7"
+   version="1.1"
+   id="svg1"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1">
+    <rect
+       x="13.110941"
+       y="10.042423"
+       width="20.503281"
+       height="25.942924"
+       id="rect1" />
+    <rect
+       x="13.110941"
+       y="10.042423"
+       width="20.503281"
+       height="25.942924"
+       id="rect1-4" />
+  </defs>
+  <g
+     id="layer1">
+    <text
+       xml:space="preserve"
+       transform="matrix(0.79303968,0,0,0.81827219,-7.6956637,-9.6511154)"
+       id="text1"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Franklin Gothic Medium';-inkscape-font-specification:'Franklin Gothic Medium, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);fill:#ff6600"><tspan
+         x="13.111328"
+         y="24.628816"
+         id="tspan3">B</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.79303968,0,0,0.81827219,-8.7169249,-9.0032036)"
+       id="text1-2"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:16px;font-family:'Franklin Gothic Medium';-inkscape-font-specification:'Franklin Gothic Medium, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:start;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1-4);fill:#f9f9f9"><tspan
+         x="13.111328"
+         y="24.628816"
+         id="tspan4">B</tspan></text>
+    <path
+       style="fill:#ff6600;stroke-width:0.264583"
+       d="M 2.6225244,2.439861 C 3.6728389,1.7548733 3.6728389,1.7548733 3.6728389,1.7548733 l -0.00652,0.6719404 z"
+       id="path1" />
+  </g>
+</svg>
