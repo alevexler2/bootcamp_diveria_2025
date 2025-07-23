@@ -28,11 +28,10 @@ body {
     width: 350px;
     border: 2px solid black;
     border-radius: 1.5rem;
-    box-shadow: rgba(173, 173, 176, 0.25) 0px 30px 60px -12px, rgba(252, 252, 252, 0.3) 0px 18px 36px -18px;
+    box-shadow: rgba(173, 173, 176, 0.25) 0px 20px 40px -12px, rgba(252, 252, 252, 0.3) 0px 8px 26px -18px;
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -42,8 +41,7 @@ body {
 
 .card:hover {
     filter: grayscale(1) blur(0px);
-    background-image: scale(1.05) translateY(-2%) rotate(2deg);
-    box-shadow: rgba(173, 173, 176, 0.25) 30px 0px 60px -12px, rgba(252, 252, 252, 0.3) 10px 10px 36px -18px;
+    box-shadow: rgba(173, 173, 176, 0.35) 0px 30px 50px -18px, rgba(252, 252, 252, 0.4) 0px 18px 36px -16px;
     z-index: 1;
 }
 
@@ -58,19 +56,17 @@ img{
     z-index: 1;
 }
 
-img:hover{
+.card:hover img{
     filter: grayscale(1) blur(2px);
     transform: scale(1.8) translateY(4%) rotate(5deg);
     z-index: 0;
+    opacity: 0.5;
 }
-
-.card__icons{
-    display: flex;
-    gap: 1rem;
-}
-.card__icons i{
-    font-size: 1.5rem;
-    color: var(--text-color);
+.card:nth-child(2):hover img{
+    filter: grayscale(1) blur(2px);
+    transform: scale(1.8) translateY(10%) rotate(-10deg);
+    z-index: 0;
+    opacity: 0.5;
 }
 
 .card__title{
@@ -79,11 +75,12 @@ img:hover{
     text-align: center;
     font-size: 1.5rem;
     color: var(--background-color);
-    transition: all 5s ease;
+    transition: all 2s ease;
 }
 
 .card:hover .card__title {
     color: var(--text-color);
+    text-shadow: #000000 0px 0px 10px;
 }
 
 .card__icons{
@@ -93,6 +90,12 @@ img:hover{
     display: flex;
     gap: 1rem;
     transition: all 1s ease;
+    cursor: pointer;
+}
+
+.card__icons i{
+    font-size: 1.5rem;
+    color: var(--text-color);
 }
 
 .card:hover .card__icons {
