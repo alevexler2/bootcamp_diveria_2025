@@ -60,7 +60,7 @@ body {
 
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   margin: 0 5px;
-  border-radius: 10px;
+  border-radius: 30px;
   cursor: pointer;
 
   transition: color 0.5s ease, opacity 0.5s ease, background 0.5s ease,
@@ -95,13 +95,13 @@ body {
   position: absolute;
   z-index: 5;
 
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: 10px;
+  bottom: 0px;
+  padding: 0 10px;
+  margin: 15px;
 
   color: white;
-  font-size: 1.2rem;
-  width: 95%;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
 }
 
 .column .text,
@@ -134,7 +134,7 @@ body {
   position: absolute;
   inset: -5px;
   background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 5px;
+  border-radius: 20px;
   z-index: -1;
 }
 
@@ -156,16 +156,23 @@ body {
   z-index: 1;
 }
 
-/* PREGUNTAR ESTO */
-.column::after {
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+/* Al hacer hover en una columna, el before desaparece */
 .column:hover::before {
   opacity: 0;
 }
+
+/*Hace que todos los afters de column sean invisibles por defecto*/
+/* Mas abajo a cada uno de estos afters se le asigna una imagen de fondo */
+.column::after {
+  opacity: 0;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.8));
+
+  transition: opacity 0.3s ease;
+}
+
+/*Al hacer hover se muestran los afters*/
 .column:hover::after {
-  opacity: 0.65;
+  opacity: 0.85;
 }
 
 /* ========== */
@@ -185,6 +192,8 @@ body {
 .column.plumas {
   background-color: #1d3142;
 }
+
+/* Setea el after para cada columna con su respectiva imagen de fondo */
 .column.bipedo::after {
   content: "";
   position: absolute;
