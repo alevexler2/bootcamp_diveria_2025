@@ -15,20 +15,26 @@ body {
 }
 
 .container{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 2rem;
+    padding: 2rem;
 }
 
 .card{
-    height: 500px;
-    width: 350px;
+    min-height: 45vh;
+    min-width: 25vw;
+    height: 45vh;
+    width: 25vw;
     border: 2px solid black;
     border-radius: 1.5rem;
-    box-shadow: rgba(173, 173, 176, 0.25) 0px 20px 40px -12px, rgba(252, 252, 252, 0.3) 0px 8px 26px -18px;
+    box-shadow: 
+        0 8px 32px rgba(255, 255, 255, 0.15),
+        0 4px 16px rgba(255, 255, 255, 0.1),
+        0 0 20px rgba(255, 255, 255, 0.05);
     box-sizing: border-box;
     overflow: hidden;
     position: relative;
@@ -40,8 +46,10 @@ body {
 }
 
 .card:hover {
-    filter: grayscale(1) blur(0px);
-    box-shadow: rgba(173, 173, 176, 0.35) 0px 30px 50px -18px, rgba(252, 252, 252, 0.4) 0px 18px 36px -16px;
+    box-shadow: 
+        0 20px 60px rgba(255, 255, 255, 0.25),
+        0 12px 40px rgba(255, 255, 255, 0.2),
+        0 0 60px rgba(255, 255, 255, 0.15);
     z-index: 1;
 }
 
@@ -90,14 +98,97 @@ img{
     display: flex;
     gap: 1rem;
     transition: all 1s ease;
+    z-index: 2;
+}
+.card:hover .card__icons {
+    bottom: 0;
+}
+
+.card__icons a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: all 0.5s ease-in;
+    padding: 0.3rem;
+    border-radius: 50%;
     cursor: pointer;
 }
 
-.card__icons i{
-    font-size: 1.5rem;
-    color: var(--text-color);
+.card:hover .card__icons a:hover {
+    transform: scale(1.2) translateY(-3px);
+    text-shadow: 0 5px 12px rgba(255, 255, 255, 0.3);
+    z-index: 2;
 }
 
-.card:hover .card__icons {
-    bottom: 0;
+.card:hover .card__icons a .fa-spotify:hover {
+    color: #1DB954;
+    text-shadow: 0 5px 12px rgba(29, 185, 84, 0.4);
+}
+
+.card:hover .card__icons a .fa-instagram:hover {
+    color: #e440dc;
+    text-shadow: 0 5px 12px rgba(228, 64, 214, 0.4);
+}
+
+.card:hover .card__icons a .fa-youtube:hover {
+    color: #FF0000;
+    text-shadow: 0 5px 12px rgba(255, 0, 0, 0.4);
+}
+
+/* responsive */
+/* desktops first */
+
+/* tablets */
+@media (max-width: 768px) {
+    .container{
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    .card {
+        min-height: 40vh;
+        min-width: 40vw;
+        height: 40vh;
+        width: 40vw;
+        border-radius: 1rem;
+    }
+    
+    .card__title {
+        font-size: 1.3rem;
+        padding: 0.8rem;
+    }
+    
+    .card__icons {
+        padding: 0.8rem;
+        gap: 0.8rem;
+    }
+    
+    .card__icons i {
+        font-size: 1.3rem;
+    }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+    .container {
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .card {
+        min-height: 35vh;
+        min-width: 65vw;
+        height: 35vh;
+        width: 65vw;
+        border-radius: 0.8rem;
+        align-self: center;
+    }
+    
+    .card__title {
+        font-size: 1.1rem;
+    }
+
+    .card__icons i {
+        font-size: 1.1rem;
+    }
 }
