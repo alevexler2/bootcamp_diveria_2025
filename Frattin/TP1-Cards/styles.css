@@ -255,3 +255,71 @@ body {
   pointer-events: none;
   z-index: 0;
 }
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow: auto;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: center;
+    max-width: 95%;
+  }
+
+  .container h1 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+    color: white;
+  }
+
+  .columns {
+    flex-direction: column;
+  }
+
+  .column {
+    flex: none; 
+    margin: 10px 0;
+    min-height: 300px;
+  }
+
+  .column:hover {
+    flex: none;
+  }
+
+  .columns:hover .column:not(:hover) {
+    flex: none;
+    opacity: 1;
+  }
+
+  .column h1 {
+    align-self: flex-start;
+  }
+
+  .column h1 {
+    font-size: 1.5rem;
+  }
+
+  .column .text {
+    font-size: 1rem;
+    line-height: 1.4rem;
+  }
+
+  .column .text,
+  .column h1 {
+    display: none;
+  }
+
+  .column.text-visible .text,
+  .column.text-visible h1 {
+    display: block;
+  }
+
+  .column:hover .text,
+  .column:hover h1 {
+    animation: fadeInText 0.5s ease forwards;
+  }
+}
