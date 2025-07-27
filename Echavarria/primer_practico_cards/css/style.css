@@ -14,35 +14,45 @@
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top:10rem;
+}
+
+.container__cards{
+    width: 95%;
 }
 
 .container__img {
     background-size: cover;
     background-position: top;
-    margin: 1.5rem;
+    margin: 1rem;
     border-radius: 0.75rem;
-    box-shadow: black 10px 10px 10px 0px;
+    box-shadow: #00000073 18px 20px 20px 0px;
 }
 
 .container__img1{
     background-image: url('../img/Lionel-Messi-Argentina.jpeg');
 }
-
 .container__img2{
     background-image: url('../img/Rodigo-DePaul-Argentina.jpeg');
 }
-
 .container__img3{
     background-image: url('../img/Julian-Alvarez-Argentina.jpeg');
+}
+.container__img4{
+    background-image: url('../img/Angel-Di-Maria-Argentina.jpg');
+}
+.container__img5{
+    background-image: url('../img/Eminiano-Martinez-Argentina.jpg');
+}
+.container__img6{
+    background-image: url('../img/Enzo-Fernandez-Argentina.jpg');
 }
 
 .card{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 400px;
-    height: 450px;
+    width: auto;
+    height: 500px;
 }
 
 .card__title,
@@ -87,7 +97,10 @@
 
 .container__img1:hover,
 .container__img2:hover,
-.container__img3:hover {
+.container__img3:hover,
+.container__img4:hover,
+.container__img5:hover,
+.container__img6:hover {
     transform: scale(1.05);
     background-image: rgba(0, 0, 0, 0.437);
     transition: 1.5s;
@@ -96,13 +109,20 @@
 .container__img1:hover{
     background-image: url('../img/Lionel-Messi-Argentina-CopaDelMundo.jpeg');
 }
-
 .container__img2:hover{
     background-image: url('../img/Rodigo-DePaul-Argentina-CopaDelMundo.jpeg');
 }
-
 .container__img3:hover{
     background-image: url('../img/Julian-Alvarez-Argentina-CopaDelMundo.jpg');
+}
+.container__img4:hover{
+    background-image: url('../img/Angel-Di-Maria-Argentina-CopaDelMundo.jpg');
+}
+.container__img5:hover{
+    background-image: url('../img/Eminiano-Martinez-Argentina-CopaDelMundo.jpg');
+}
+.container__img6:hover{
+    background-image: url('../img/Enzo-Fernandez-Argentina-CopaDelMundo.jpg');
 }
 
 .card__rrss .instagram:hover,
@@ -111,3 +131,19 @@
     transform: scale(1.3);
     transition: 0.75s;
 }
+
+@media (min-width: 480px) {
+    .container__cards{  
+        width: 45%;
+    }
+}
+
+@media (width >= 768px) {
+    .container {
+        max-width: 1980px;
+        margin: auto;
+    }
+    .container__cards{
+        width: 30%;
+    }
+}       
