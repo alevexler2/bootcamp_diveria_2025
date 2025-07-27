@@ -3,55 +3,8 @@
   --verde-medio: #66bb6a;
   --verde-claro: #c8e6c9;
   --blanco: #ffffff;
-
   --gris-claro: #dfe9e3;
-}
-
-
-.contenedor-principal {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-section {
-  background-color: transparent;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-section h3 {
-  color: var(--verde-oscuro);
-  margin-bottom: 0.5rem;
-}
-
-.texto-sobre-mi,
-.proyecto,
-.Hobbies,
-.informacion-extra {
-  background-color: var(--verde-claro);
-  padding: 1rem;
-  border-radius: 8px;
-  margin-top: 1rem;
-}
-
-
-.columna {
-  display: flex;
-  flex-direction: column;
-  background-color: var(--blanco);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-}
-
-.columna-titulo {
-  color: var(--verde-oscuro);
-  text-align: center;
-  margin-top: 0;
-  border-bottom: 2px solid var(--verde-claro);
-  padding-bottom: 0.5rem;
+  --negro: #000000;
 }
 
 body {
@@ -103,7 +56,56 @@ a {
 
 a:hover {
   text-decoration: underline;
-   color: #e0f2f1;
+  color: #e0f2f1;
+}
+
+.contenedor-principal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+section {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+section h3 {
+  color: var(--verde-oscuro);
+  margin-bottom: 0.5rem;
+}
+
+.texto-sobre-mi{
+  background-color: var(--verde-claro);
+  padding: 1rem;
+  border-radius: 8px;
+}
+.proyecto,
+.Hobbies,
+.informacion-extra {
+  background-color: var(--verde-claro);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-top: 1rem;
+}
+
+.columna {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--blanco);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.columna-titulo {
+  color: var(--verde-oscuro);
+  text-align: center;
+  margin-top: 0;
+  border-bottom: 2px solid var(--verde-claro);
+  padding-bottom: 0.5rem;
 }
 
 .contenido-sobre-mi {
@@ -111,7 +113,7 @@ a:hover {
   align-items: center;
   gap: 1.5rem;
   padding: 1.5rem;
-  margin: 0 auto 2rem auto;
+  margin: 0 0 2rem auto;
   background-color: var(--blanco);
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
@@ -124,71 +126,135 @@ a:hover {
   border-radius: 8px;
 }
 
-.tarjetas-PersonajeFav{
+/* PERSONAJES FAVORITOS */
+.personajes-favoritos-container {
+  margin-top: 3rem;
+  background-color: var(--blanco);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.personajes-favoritos-container h2 {
+  text-align: center;
+  color: var(--verde-oscuro);
+  border-bottom: 2px solid var(--verde-claro);
+  margin-bottom: 2rem;
+}
+
+.tarjetas-PersonajeFav {
   display: flex;
   justify-content: center;
-  margin: 2rem auto;
-  padding: 2rem ;
-  gap: 4rem;
-  background-color: var(--verde-claro);
-  border-radius: 12px;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 
 .columna-Gojo,
 .columna-Bokuto,
-.columna-Gandalf{
+.columna-Gandalf {
   position: relative;
-  width: 420px;
-  height: 420px;
+  width: 320px;
+  height: 320px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
 }
 
 .columna-Gojo img,
 .columna-Bokuto img,
-.columna-Gandalf img{
-position: absolute;
+.columna-Gandalf img {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   border-radius: 12px;
+  object-fit: cover;
   transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
-
 .portada-Gandalf,
 .portada-Gojo,
-.portada-Bokuto{
-  object-fit: cover;
-  border-radius: 8px;
+.portada-Bokuto {
   z-index: 1;
   opacity: 1;
+  filter: grayscale(80%);
 }
 
 .foto-Gandalf,
-.foto-Gojo,
 .foto-Bokuto {
-  width: 420px;
-  height: 420px;
-  object-fit: cover;
-  border-radius: 8px;
-  z-index: 1;
-  opacity:0;
-  transition: transform 0.8s ease, opacity 0.8s ease;
+  z-index: 2;
+  opacity: 0;
 }
+.foto-Gojo {
+  z-index: 2;
+  opacity: 0;
+}
+
+.nombre-personaje {
+  position: absolute;
+  top: 1rem;
+  left: 20%;
+  transform: translateX(-50%);
+  font-weight: bold;
+  color: var(--negro);
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  z-index: 3;
+  border-bottom: 2px solid var(--negro);
+}
+.columna-Gandalf .nombre-personaje {
+  color: var(--blanco);
+  border-bottom: 2px solid var(--blanco);
+}
+
+.columna-Gojo:hover .nombre-personaje,
+.columna-Bokuto:hover .nombre-personaje,
+.columna-Gandalf:hover .nombre-personaje {
+  opacity: 1;
+}
+
 
 .foto-Gandalf:hover,
 .foto-Gojo:hover,
-.foto-Bokuto:hover{
+.foto-Bokuto:hover {
   transform: scale(1.05);
   opacity: 1;
-  
 }
 
 .portada-Gandalf:hover,
 .portada-Gojo:hover,
-.portada-Bokuto:hover{
+.portada-Bokuto:hover {
   transform: scale(0.95);
   opacity: 0;
+}
+
+/* codigo para tarjetas responsive */
+@media screen and (max-width: 992px) {
+  .contenedor-principal {
+    grid-template-columns: 1fr;
+  }
+
+  .contenido-sobre-mi {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .foto-perfil {
+    width: 100%;
+    height: auto;
+  }
+
+  .columna-Gojo,
+  .columna-Bokuto,
+  .columna-Gandalf {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+
+  .columna-Gojo img,
+  .columna-Bokuto img,
+  .columna-Gandalf img {
+    border-radius: 12px;
+  }
 }
