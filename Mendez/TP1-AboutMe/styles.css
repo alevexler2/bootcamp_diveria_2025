@@ -1,0 +1,321 @@
+/* === RESET Y BASE === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00ffc8;
+
+  --text-color: white;
+  --text-color--opacity: #ccc;
+  --text-color--dark: #000;
+  --text-color--aquaNeon: #00ffc8;
+
+  --text-size--titlemobile: 3rem;
+  --text-size--titleDeskop: 9rem;
+  --text-size--description: 1rem;
+
+  --background-gradient-start: #0f2027;
+  --background-gradient-middle: #203a43;
+  --background-gradient-end: #2c5364;
+  --background-opacity: rgba(0, 0, 0, 0.6);
+  --whatsapp-green: #25D366;
+  --dark-navbar-bg: rgba(10, 10, 10, 0.85);
+
+  --animation-slideInLeft: slideInLeft 0.8s ease-out forwards;
+  --animation-fadeIn: fadeIn 1s ease; 
+  --animation-delay: 0.5s;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(
+    circle at right, 
+    var(--background-gradient-start), 
+    var(--background-gradient-middle), 
+    var(--background-gradient-end));
+  color: var(--text-color);
+}
+
+
+/* === NAVBAR === */
+.navbar {
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  width: 100%;
+  padding: 1.2rem 2rem;
+  background: var(--dark-navbar-bg);
+  backdrop-filter: blur(8px);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.navbar nav a {
+  color: var(--text-color);
+  margin-left: 1.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: var(--text-color);
+}
+
+
+/* === HERO SECTION === */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background:
+    linear-gradient(
+      var(--background-opacity), 
+      var(--background-opacity)),
+    url('./assets/foto.jpg') no-repeat center/cover;
+  background-attachment: fixed;
+}
+
+.hero-left {
+  flex: 1;
+  text-align: center;
+  display: none;
+}
+
+.hero-right {
+  flex: 1;
+  max-width: 600px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-inline: 5rem;
+  animation: var(--animation-slideInLeft);
+  animation-delay: var(--animation-delay);
+  opacity: 0;
+}
+
+.pretitle {
+  text-transform: uppercase;
+  font-size: var(--text-size--description);
+  color: var(--text-color--aquaNeon);
+  letter-spacing: 2px;
+}
+
+.hero-right h1 {
+  font-size: var(--text-size--titlemobile);
+  font-weight: 800;
+}
+
+.description {
+  font-size: var(--text-size--description);
+  color: var(--text-color--opacity);
+}
+
+.whatsapp-btn {
+  background-color: var(--whatsapp-green);
+  color: var(--text-color--dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--whatsapp-green);
+}
+
+
+/* === ABOUT SECTION === */
+.about-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  gap: 1.5rem;
+  text-align: center;
+}
+
+.about-section h2 {
+  font-size: var(--text-size--titlemobile);
+  color: var(--text-color--aquaNeon);
+}
+
+.about-section p {
+  font-size: var(--text-size--description);
+  color: var(--text-color--opacity);
+}
+
+
+/* === CONTACT SECTION === */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1rem;
+  margin: 0 auto;
+  height: 100vh;
+  gap: 1.5rem;
+  text-align: center;
+  background:
+    linear-gradient(
+      var(--background-opacity), 
+      var(--background-opacity)),
+    url('./assets/contacto.png') no-repeat center/cover;
+}
+
+.contact-section h2 {
+  font-size: var(--text-size--titlemobile);
+  color: var(--text-color--aquaNeon);
+
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+.contact-section p {
+  color: var(--text-color);
+  font-size: var(--text-size--description);
+}
+
+.contact-section a {
+  color: var(--text-color--aquaNeon);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.contact-section a:hover {
+  text-decoration: underline;
+}
+
+
+/* === MEDIA QUERIES === */
+@media (min-width: 768px) {
+  .hero {
+    background:
+    linear-gradient(
+      var(--background-opacity), 
+      var(--background-opacity)),
+    url('./assets/potada.jpg') no-repeat center/cover;
+    background-attachment: fixed;
+  }
+
+  .hero-left {
+    display: block;
+    width: 50%;
+  }
+
+  .hero-right {
+    width: 50%;   
+  }
+
+  .profile-img {
+    width: 20rem;
+    border-radius: 20%;
+    filter: grayscale(100%) drop-shadow(-12px 8px 15px rgba(0, 255, 200, 0.1));
+    animation: var(--animation-fadeIn);
+  }
+
+
+  /* === ABOUT SECTION === */
+  .about-section {
+    flex-direction: row; 
+    animation: var(--animation-fadeIn);
+  }
+
+  .about-section h2 {
+    width: 50%;
+    font-size: var(--text-size--titleDeskop);
+    display: flex;
+    align-items: center;
+    text-align: start;
+  }
+
+  .about-section p {
+    width: 50%;
+    font-size: var(--text-size--description);
+    color: var(--text-color--opacity);
+    line-height: 1.8;
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  /* === CONTACT SECTION === */
+  .contact-section {
+    flex-direction: row-reverse;
+    height: 100vh;
+    animation: var(--animation-fadeIn);
+  }
+
+  .contact-section h2 {
+    width: 50%;
+    font-size: var(--text-size--titleDeskop);
+    color: var(--text-color--aquaNeon);
+    text-align: end;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+  }
+
+  .contact-section div {
+    width: 50%;
+    line-height: 1.8;
+  }
+
+  .contact-section div p {
+    font-size: var(--text-size--description);
+    color: var(--text-color--opacity);
+  }
+
+  .contact-section div a {
+    color: var(--text-color--aquaNeon);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .contact-section div a:hover {
+    text-decoration: underline;
+  }
+}
+
+
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
