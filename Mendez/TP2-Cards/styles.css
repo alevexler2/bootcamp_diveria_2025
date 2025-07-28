@@ -201,48 +201,27 @@ html, body {
 
 .description-section {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
-  max-width: 1024px;
-  margin: 0 auto;
-  font-family: var(--font-sans);
+  justify-content: center;
+  align-items: center; 
   height: 100vh;
-}
-
-@media (min-width: 600px) {
-  .description-section {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 800px) {
-  .description-section {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  padding: 1rem;
+  font-family: var(--font-sans);
 }
 
 .card {
   position: relative;
   display: flex;
   align-items: flex-end;
-  flex: 1 1 200px; 
-  max-width: 250px;   
+  height: calc((100vh - 4rem) / 4);
+  width: 15rem;
+  margin-inline: 1rem;
   overflow: hidden;
   padding: 1rem;
   text-align: center;
   color: var(--text-color);
   background-color: var(--text-color);
   box-shadow: var(--shadow-base);
-}
-
-
-@media (min-width: 600px) {
-  .card {
-    height: 350px;
-  }
 }
 
 .card::before {
@@ -291,7 +270,6 @@ html, body {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 1rem;
   transition: transform var(--d) var(--e);
   z-index: 1;
 }
@@ -304,9 +282,36 @@ html, body {
 
 .card_content p {
   font-family: var(--font-serif);
-  font-size: 1.125rem;
+  font-size: 1rem;
   font-style: italic;
   line-height: 1.35;
+}
+
+@media (min-width: 600px) {
+  .description-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+}
+
+@media (min-width: 800px) {
+  .description-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card {
+    height: calc((100vh - 4rem) / 2);
+  }
+}
+
+@media (min-width: 1500px) {
+  .description-section {
+    width: calc((100vw - 4rem) / 1);
+  }
+  .card {
+    flex: 1; 
+    height: calc(100vh - 4rem);
+    min-height: 15rem; 
+  }
 }
 
 @media (hover: hover) and (min-width: 600px) {
@@ -380,9 +385,10 @@ html, body {
   padding: 0 36px;
   perspective: 2500px;
   margin: 0 50px;
+  --article-height: 150px;
+  --article-width: calc(var(--article-height) / 4);
   width: var(--article-width);
   height: var(--article-height);
-  max-width: 250px;
 }
 
 .article_wrapper {
@@ -401,7 +407,6 @@ html, body {
   max-height: 20rem;
   object-fit: cover;
 }
-
 
 .article:hover .article_wrapper {
   transform: var(--transform-article-hover);
@@ -453,7 +458,7 @@ html, body {
 
 .article_character {
   width: 100%;
-  max-width: 7rem;
+  max-width: 3rem;  
   opacity: 0;
   transition: all 0.5s;
   position: absolute;
@@ -464,4 +469,28 @@ html, body {
 .article:hover .article_character {
   opacity: 1;
   transform: var(--transform-article-character-hover);
+}
+
+@media (min-width: 600px) {
+  .article {
+    width: calc(var(--article-height) / 1);
+    height: 260px;
+  }
+  .article_character {
+    max-width: 5rem;
+  }
+}
+
+@media (min-width: 1500px) {
+  .article {
+    width: calc(var(--article-height) * 2);
+    height: calc(45vh - 4rem);
+  }
+  .article_character {
+    max-width: 9rem;
+  }
+  .cover-image {
+    max-width: 18rem;
+    max-height: 30rem;
+  }
 }
