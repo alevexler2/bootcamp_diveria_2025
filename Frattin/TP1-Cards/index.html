@@ -65,5 +65,22 @@
         </div>
       </div>
     </main>
+    <script>
+      document.querySelectorAll(".column").forEach((column) => {
+        column.addEventListener("click", () => {
+          if (window.innerWidth <= 768) {
+            const isVisible = column.classList.contains("text-visible");
+
+            document
+              .querySelectorAll(".column")
+              .forEach((c) => c.classList.remove("text-visible"));
+
+            if (!isVisible) {
+              column.classList.add("text-visible");
+            }
+          }
+        });
+      });
+    </script>
   </body>
 </html>

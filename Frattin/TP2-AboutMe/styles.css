@@ -106,7 +106,29 @@ nav.navbar li {
 }
 
 /* ============= */
+/* ABOUT-ME */
+.about-me {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.about-me p {
+  max-width: ;
+}
+
+.about-me img {
+  position: relative;
+  max-width: 150px;
+  max-height: 250px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ============= */
 /* HOBBIES */
+
 .hobbies {
   display: grid;
   grid-template-columns: repeat(2, minmax(450px, 1fr));
@@ -126,6 +148,8 @@ nav.navbar li {
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  transition: all 0.3 ease-in-out;
 }
 
 .hobby-card h3,
@@ -150,8 +174,8 @@ nav.navbar li {
   border: 3px solid white;
   object-fit: cover;
   margin-left: -10px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s;
 }
 
 .hobby-img img:first-child {
@@ -175,28 +199,88 @@ nav.navbar li {
 
 .project-card {
   position: relative;
-
-  padding-bottom: 3rem;
-
-  z-index: 0;
+  z-index: 1; /* más alto que el ::after */
   min-height: 250px;
   background-color: #f9f9f9;
   padding: 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: visible; /* dejamos que el after sobresalga */
+  transition: all 0.4s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project-card::before {
+  content: "";
+  position: absolute;
+  left: 200%;
+  top: 0;
+  opacity: 1;
+  background-image: url("https://static.vecteezy.com/system/resources/previews/011/912/003/non_2x/plus-sign-icon-free-png.png");
+}
+
+.project-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  width: 115%;
+  height: 100%;
+
+  z-index: 0; /* más bajo que .project-card */
+  opacity: 0;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transform: translateX(85%);
+  transition: all 0.4s ease;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  transform: translateX(95%);
+}
+
+.project-card.kollektivpolylog::after {
+  background-image: url("assets/images/projects/kollektivpolylog.jpg");
+  background-position: top;
+}
+
+.project-card.focus-app::after {
+  background-image: url("assets/images/projects/focus-app.jpg");
+}
+
+.project-card.inkspire::after {
+  background-image: url("assets/images/projects/inkspire.jpg");
+}
+
+.project-card.posts::after {
+  background-image: url("assets/images/projects/posts.jpg");
+  background-position: top;
 }
 
 .project-img {
-
 }
 
 /* ============= */
 /* CONTACTO */
+.contacto {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  justify-content: space-between; /* distribuye con espacios iguales */
+}
+
 form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  max-width: 500px;
+  min-width: 450px;
   margin: 0 auto;
 }
 
