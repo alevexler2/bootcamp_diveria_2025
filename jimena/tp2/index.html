@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Paraná</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg bg-success fixed-top py-2">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <i class="bi bi-tree-fill me-2"></i>Paraná
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+            <a class="nav-link" href="#">Mapa</a>
+            <a class="nav-link" href="#">Historia</a>
+            <a class="nav-link" href="#">¿Qué hacer?</a>
+            <a class="nav-link" href="#">¿Dónde comer?</a>
+            <a class="nav-link" href="#">Preguntas frecuentes</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="text-center py-3"
+    >
+      <div class="container mt-5">
+        <h1 class="display-4">Paraná</h1>
+        <p class="lead">Capital de Entre Ríos</p>
+      </div>
+    </header>
+
+    <div
+        id="carouselExampleRide"
+        class="carousel slide mb-4"
+        data-bs-ride="true"
+        style="height: 400px; overflow: hidden"
+      >
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active h-100">
+            <img
+              src="/images/pna1.jpg"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Atardecer en río pna"
+            />
+          </div>
+          <div class="carousel-item h-100">
+            <img
+              src="/images/pna2.jpg"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Islote Curupí"
+            />
+          </div>
+          <div class="carousel-item h-100">
+            <img
+              src="/images/pna3.jpg"
+              class="d-block w-100 h-100 object-fit-cover"
+              alt="Costanera"
+            />
+          </div>
+        </div>
+        <button
+          class="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleRide"
+          data-bs-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button
+          class="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleRide"
+          data-bs-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Siguiente</span>
+        </button>
+      </div>
+
+    <div class="container text-center my-5">
+      <div class="row justify-content-md-center align-items-center">
+        <div class="col-12 mb-3">
+          <h2 class="display-6">Mejores cafeterías y restaurantes</h2>
+        </div>
+        <!-- uno grande -->
+        <div class="col-12 col-lg-8 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="bi bi-cup-hot-fill text-warning me-1"></i>Lapan
+                <span class="badge bg-primary ms-2">Cafetería</span>
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+                sit amet consectetur adipiscing elit quisque faucibus.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <!-- dos medianos -->
+        <div class="col-12 col-md-6 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="bi bi-stars text-warning me-1"></i>Justo
+                <span class="badge bg-info ms-2">Restaurante</span>
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+                sit amet consectetur adipiscing elit quisque faucibus.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="bi bi-cup-hot-fill text-warning me-1"></i>Gregoria
+                <span class="badge bg-primary ms-2">Cafetería</span>
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+                sit amet consectetur adipiscing elit quisque faucibus.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <!-- tres chicos -->
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="bi bi-stars text-warning me-1"></i>Lola Valentina
+                <span class="badge bg-info ms-2">Restaurante</span>
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+                sit amet consectetur adipiscing elit quisque faucibus.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="bi bi-cup-hot-fill text-warning me-1"></i>Glace de
+                Viande
+                <span class="badge bg-primary ms-2">Cafetería</span>
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+                sit amet consectetur adipiscing elit quisque faucibus.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary">Ver más</button>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-4 mb-4">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h5 class="card-title">
+                <i class="bi bi-stars text-warning me-1"></i>La Posta del Brete
+                <span class="badge bg-info ms-2">Restaurante</span>
+              </h5>
+              <p class="card-text">
+                Lorem ipsum dolor sit amet consectetur adipiscing elit. Dolor
+                sit amet consectetur adipiscing elit quisque faucibus.
+              </p>
+              <button class="btn btn-sm btn-outline-secondary">Ver más</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion mt-5 mb-5 mx-auto" id="accordionExample">
+        <div class="accordion-header">
+          <h3 class="accordion-header mb-4 display-6">Top 3 lugares para...</h3>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                ...ver el atardecer
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-start">
+                <strong>1.</strong> Barrancas del mirador
+                <br />
+                <strong>2.</strong> Playas del Thompson
+                <br />
+                <strong>3.</strong> Parque Nuevo
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                ...ir a caminar
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-start">
+                <strong>1.</strong> Costanera
+                <br />
+                <strong>2.</strong> Parque Gazano
+                <br />
+                <strong>3.</strong> Parque Urquiza
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                ...conocer el río
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#accordionExample"
+            >
+              <div class="accordion-body text-start">
+                <strong>1.</strong> Islote Curupí
+                <br />
+                <strong>2.</strong> Club de Pescadores
+                <br />
+                <strong>3.</strong> Humedales del Paraná
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="bg-success py-3 mt-5 mb-0">
+      <div class="container text-center w-100">
+        <p class="mb-1">Paraná</p>
+        <p class="mb-0">
+          <i class="bi bi-instagram me-2"></i>
+          <i class="bi bi-facebook me-2"></i>
+          <i class="bi bi-envelope-fill me-2"></i>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
