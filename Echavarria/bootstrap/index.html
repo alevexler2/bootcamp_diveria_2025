@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva de eventos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar container-fluid navbar-expand-lg p-0 bg-dark">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="#">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-ticket-perforated ticket-icon" viewBox="0 0 16 16">
+                        <path d="M4 4.85v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9z"/>
+                        <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"/>
+                    </svg>
+                    <span class="m-2 text-white fw-bold">tiketExpress</span>
+                </a>
+                <button class="navbar-toggler bg-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <ul class="navbar-items__logos d-flex flex-sm-row align-items-center justify-content-start justify-md-content-center">
+                            <li class="navbar-items">
+                                <a class="me-3" href=""><img src="../primer_practico_cards/img/icons/instagram.svg" alt="Logo instagram"></a>
+                            </li>
+                            <li class="navbar-item">
+                                <a class="me-3" href=""><img src="../primer_practico_cards/img/icons/twitter-x.svg" alt="Logo Twitter-X"></a>
+                            </li>
+                            <li class="navbar-item">
+                                <a class="me-3" href=""><img src="../primer_practico_cards/img/icons/facebook.svg" alt="Logo Facebook"></a>
+                            </li>
+                        </ul>
+                        <li class="nav-item dropdown">
+                            <div class="d-flex flex-row justify-md-content-between align-items-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="nav-cicle me-2">
+                                            BE
+                                        </div>
+                                    </div>
+                                </div>
+                                <a class="nav-link dropdown-toggle text-white" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Bruno Echavarria
+                                </a>
+                                <ul class="dropdown-menu position-absolute text-white">
+                                    <li><a class="dropdown-item" href="#">Mi perfil</a></li>
+                                    <li><a class="dropdown-item" href="#">Configuraciones</a></li>
+                                    <li><a class="dropdown-item" href="#">Alguna opcion más</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <a class="nav-link text-white" aria-current="page" href="#">Ayuda</a>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="container d-flex flex-column flex-wrap">
+            <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-between align-items-center pt-5 pb-3">
+                <header>
+                    <div class="sub_header">
+                        <div class="sub_header__content d-flex flex-column flex-md-row align-items-center">
+                            <h2 class="sub_header__title me-3">
+                                Eventos activos
+                            </h2>
+                            <div class="sub_header__buscar">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Bucar evento" aria-label="Bucar evento" aria-describedby="button-addon2">
+                                    <button class="btn btn-outline-secondary d-flex justify-content-between align-items-center" type="button" id="button-addon2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor" class="bi bi-search m-2" viewBox="0 0 16 16">
+                                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                                        </svg>
+                                        buscar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <a class="btn-add_event btn btn-dark mt-3 mt-md-0" href="">Agregar evento</a>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento1.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento2.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento3.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento34.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento5.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento1.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento2.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento34.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento34.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div class="card mb-3">
+                        <img src="./img/evento5.jpg" class="card-img-top" alt="Descripcion del evento">
+                        <div class="card-body">
+                            <h5 class="card-title">Este es el titulo del evento</h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                            <a href="#" class="btn btn-dark">Ir al evento</a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+            <div class="pagination_container d-flex justify-content-center justify-content-lg-end">
+                <nav aria-label="...">
+                    <ul class="pagination">
+                    <li class="page-item"><a href="#" class="page-link">Previous</a></li>
+                    <li class="page-item active text-black"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-current="page">2</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </section>
+
+        <section class="container-fluid bg-secondary py-5">
+            <div class="container">
+                <div class="popular-events py-3">
+                    <h2 class="mb-3 text-white">
+                        Top 3 eventos populares
+                    </h2>
+                    <div class="row">
+                        <div class="col-sm-4 mb-3 mb-sm-0">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo del evento</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-dark">Ver evento</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo del evento</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-dark">Ver evento</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">Titulo del evento</h5>
+                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                    <a href="#" class="btn btn-dark">Ver evento</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="my-5">
+            <div class="container">
+                <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion-item">
+                        <h2 class="my-4">Preguntas frecuentes</h2>
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            Como puedo reservar un evento?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Para realizar una realizar una reservacion de un evento debe ingresar al evento al cual usted quiera asistir y agregar una reservacion.</code> class. This is the first item’s accordion body.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            Que tipos de eventos puedo reservar?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Puede reservar cualquier tipo de evento que esté disponible, de no ser así y quiere realizar algun nuevo evento, puede crearlo usted mismo!.</div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            Como puedo cancelar una reserva?
+                        </button>
+                        </h2>
+                        <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+                        <div class="accordion-body">Para cancelar una reservacion debe ir al evento del cual desea cancelar la resrevacion y darle click al boton de cancelar, esto le mostrará una ventana de confirmacion en la cual usted debe aceptar. Tan facil como eso!.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="container-fluid mt-5 bg-secondary">
+            <div class="form-contact container py-5">
+                <h2 class="my-4 text-white">Contactanos!</h2>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label text-white">Correo electronico</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput2" class="form-label text-white">Nombre completo</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput2" placeholder="Juan Perez">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label text-white">Motivo de su comunicacion</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+                <p class="col-md-4 mb-0 text-body-secondary">© 2025 ticketExpress</p>
+                <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none" aria-label="Bootstrap">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-ticket-perforated ticket-icon" viewBox="0 0 16 16">
+                        <path d="M4 4.85v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9zm-7 1.8v.9h1v-.9zm7 0v.9h1v-.9z"/>
+                        <path d="M1.5 3A1.5 1.5 0 0 0 0 4.5V6a.5.5 0 0 0 .5.5 1.5 1.5 0 1 1 0 3 .5.5 0 0 0-.5.5v1.5A1.5 1.5 0 0 0 1.5 13h13a1.5 1.5 0 0 0 1.5-1.5V10a.5.5 0 0 0-.5-.5 1.5 1.5 0 0 1 0-3A.5.5 0 0 0 16 6V4.5A1.5 1.5 0 0 0 14.5 3zM1 4.5a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v1.05a2.5 2.5 0 0 0 0 4.9v1.05a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-1.05a2.5 2.5 0 0 0 0-4.9z"/>
+                    </svg> 
+                    <span class="m-2 text-dark fw-bolder">tiketExpress</span>
+                </a>
+                <ul class="nav col-md-4 justify-content-end">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-body-secondary">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-body-secondary">Eventos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-body-secondary">Top 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-body-secondary">Preguntas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link px-2 text-body-secondary">Contacto</a>
+                    </li>
+                </ul> 
+            </footer>
+        </div>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
