@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-color: #FAF3E0;
+        }
+
+        .bg-ladrillo {
+            background-color: #B7410E;
+        }
+
+        .titulo-ladrillo {
+            color: #B7410E;
+        }
+
+        .card-img-top {
+            object-fit: cover;
+            height: 200px;
+        }
+
+        .carousel-inner img {
+            object-fit: cover;
+            height: 400px;
+        }
+
+        footer {
+            background-color: #B7410E;
+            color: white;
+            padding: 2rem 0;
+        }
+    </style>
+</head>
+
+<body style="background-color: background-color;">
+
+    <header class="text-center text-white bg-ladrillo py-4">
+        <h1>La Ratataouille</h1>
+        <figure class="text-center mb-0">
+            <blockquote class="blockquote">
+                <h6>Cualquiera puede cocinar.</h6>
+            </blockquote>
+            <figcaption class="blockquote-footer text-white" style="--bs-text-opacity: .8;">
+                Cheff Gusteau
+            </figcaption>
+        </figure>
+    </header>
+
+
+    <div class="container text-center">
+        <div class="row justify-content-sm-center">
+            <div class="col-sm-6">
+                <section class=" container-sm py-4">
+                    <h2 class="titulo-ladrillo text-center mb-4">Nosotros</h2>
+                    <div id="carouselExampleCaptions" class="carousel slide">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="https://preview.redd.it/fdu5qab3h2v51.jpg?width=640&crop=smart&auto=webp&s=fcd8eb92f069093ebe11626eef0b707f85d493f0"
+                                    class="d-block w-100 " alt="Linguini">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Alfredo Linguini</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item ">
+                                <img src="https://i.redd.it/rbmmfzpa9pz71.png" class="d-block w-100" alt="Remy">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Remy</h5>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROb7UcUCYhZldpcM7pf73i0ZOEGWKPAS3F7w&s"
+                                    class="d-block w-100" alt="Colette">
+                                <div class="carousel-caption d-md-block">
+                                    <h5>Colette Tatou</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <section id="entradas" class="container">
+            <h2 class="titulo-ladrillo text-center">Entradas</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2BdryexVCbCy6mrQulahWH6FOBBN0p5AwYQ&s"
+                            class="card-img-top" alt="entrada 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Ensalada gourmet</h5>
+                            <p class="card-text">Mezcla de hojas frescas con vinagreta balsámica.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNl7zOm3jhJsvjiGfA8za3W2OJOhPTV-eCQ&s"
+                            class="card-img-top" alt="entrada 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sopa de calabaza</h5>
+                            <p class="card-text">Cremosa, con un toque de jengibre y crema.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2BdryexVCbCy6mrQulahWH6FOBBN0p5AwYQ&s"
+                            class="card-img-top" alt="entrada 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Ensalada gourmet</h5>
+                            <p class="card-text">Mezcla de hojas frescas con vinagreta balsámica.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNl7zOm3jhJsvjiGfA8za3W2OJOhPTV-eCQ&s"
+                            class="card-img-top" alt="entrada 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sopa de calabaza</h5>
+                            <p class="card-text">Cremosa, con un toque de jengibre y crema.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2BdryexVCbCy6mrQulahWH6FOBBN0p5AwYQ&s"
+                            class="card-img-top" alt="entrada 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Ensalada gourmet</h5>
+                            <p class="card-text">Mezcla de hojas frescas con vinagreta balsámica.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgNl7zOm3jhJsvjiGfA8za3W2OJOhPTV-eCQ&s"
+                            class="card-img-top" alt="entrada 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Sopa de calabaza</h5>
+                            <p class="card-text">Cremosa, con un toque de jengibre y crema.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="principales" class="container">
+            <h2 class="titulo-ladrillo text-center">Plato Principal</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://media.istockphoto.com/id/1180869403/es/foto/plato-tradicional-de-verduras-provenzales-cocinadas-francesas-ratatouille.jpg?s=612x612&w=0&k=20&c=22C6JXmepZ9gZmZK7Kolj3r33KLCCdr6Bp1S5W2r3OE="
+                            class="card-img-top" alt="plato principal 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Ratataouille</h5>
+                            <p class="card-text">Nuestra gran especialidad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://jetextramar.com/wp-content/uploads/2023/03/receta-de-entrecot-lomo-bajo-de-vaca-madurada.jpg"
+                            class="card-img-top" alt="plato principal 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrecot a la parrilla</h5>
+                            <p class="card-text">Carne asada al punto, con guarnición de papas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://jetextramar.com/wp-content/uploads/2023/03/receta-de-entrecot-lomo-bajo-de-vaca-madurada.jpg"
+                            class="card-img-top" alt="plato principal 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrecot a la parrilla</h5>
+                            <p class="card-text">Carne asada al punto, con guarnición de papas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://jetextramar.com/wp-content/uploads/2023/03/receta-de-entrecot-lomo-bajo-de-vaca-madurada.jpg"
+                            class="card-img-top" alt="plato principal 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrecot a la parrilla</h5>
+                            <p class="card-text">Carne asada al punto, con guarnición de papas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://jetextramar.com/wp-content/uploads/2023/03/receta-de-entrecot-lomo-bajo-de-vaca-madurada.jpg"
+                            class="card-img-top" alt="plato principal 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrecot a la parrilla</h5>
+                            <p class="card-text">Carne asada al punto, con guarnición de papas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://jetextramar.com/wp-content/uploads/2023/03/receta-de-entrecot-lomo-bajo-de-vaca-madurada.jpg"
+                            class="card-img-top" alt="plato principal 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Entrecot a la parrilla</h5>
+                            <p class="card-text">Carne asada al punto, con guarnición de papas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="postres" class="container mb-5">
+            <h2 class="titulo-ladrillo text-center">Postres</h2>
+            <div class="row row-cols-1 row-cols-md-3 g-4 py-3">
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSivxblfNZoNzGhmLxK7RYhBbpQ_Ba2OVIDuA&s"
+                            class="card-img-top" alt="postre 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarta de frutas</h5>
+                            <p class="card-text">Masa crocante con crema pastelera y frutas frescas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdKbVH-Ojfva9e8OaUtypgVnF-g0peloxULg&s"
+                            class="card-img-top" alt="postre 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheesecake</h5>
+                            <p class="card-text">Clásico de vainilla con base de galleta y frutos rojos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSivxblfNZoNzGhmLxK7RYhBbpQ_Ba2OVIDuA&s"
+                            class="card-img-top" alt="postre 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarta de frutas</h5>
+                            <p class="card-text">Masa crocante con crema pastelera y frutas frescas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdKbVH-Ojfva9e8OaUtypgVnF-g0peloxULg&s"
+                            class="card-img-top" alt="postre 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheesecake</h5>
+                            <p class="card-text">Clásico de vainilla con base de galleta y frutos rojos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSivxblfNZoNzGhmLxK7RYhBbpQ_Ba2OVIDuA&s"
+                            class="card-img-top" alt="postre 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Tarta de frutas</h5>
+                            <p class="card-text">Masa crocante con crema pastelera y frutas frescas.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdKbVH-Ojfva9e8OaUtypgVnF-g0peloxULg&s"
+                            class="card-img-top" alt="postre 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Cheesecake</h5>
+                            <p class="card-text">Clásico de vainilla con base de galleta y frutos rojos.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-1 fs-5">La Ratataouille</p>
+            <p class="mb-1"> Calle del Sabor 123, París</p>
+            <p class="mb-1"> +33 1 23 45 67 89</p>
+            <p class="mb-0"> Abierto todos los días de 12:00 a 23:00</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"
+        integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
