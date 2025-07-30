@@ -1,0 +1,66 @@
+h1 {
+  font-size: clamp(2px, 5vw, 200px);  
+}
+
+.card_text--truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; 
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.card {
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  max-height: 17rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  transition: 200ms;
+  transform: scale(1.1);
+  z-index: 100;
+}
+
+.card:hover .card_text--truncate {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: unset; 
+  line-clamp: unset;
+  -webkit-box-orient: unset;
+}
+
+.card-contanier:has(.card:hover) .card:not(:hover) {
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (min-width: 576px) {
+  .card {
+    height: 12rem;
+  }
+  .card_text--truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5; 
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+  }
+}
+
+@media (min-width: 768px) and (min-height: 601px) {
+  .card {
+    height: 17rem;
+  }
+  .card_text--truncate {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 8; 
+    line-clamp: 8;
+    -webkit-box-orient: vertical;
+  }
+}
