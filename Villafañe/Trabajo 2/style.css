@@ -24,6 +24,7 @@ body {
   background-color: #f2f2f2;
   border-radius: 10px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -138,14 +139,15 @@ body {
 .card__description {
 
   margin: 2vh 0 0;
-   font-size: clamp(0.8rem, 0.9vw, 1.5rem);
+   font-size: clamp(0.8em, 1.3vw, 1.4em);
   color: #221e1e;
   line-height: 1.2;
 }
 
 @media screen and (max-width: 576px) {
   .card {
-    height: 60vh;
+    height: 70vh;
+    width: 80vh;
     margin-bottom: 2rem;
     perspective: none;
   }
@@ -164,13 +166,13 @@ body {
   }
 
   .card__description {
-    font-size: 0.95em;
+    font-size: 1.2em;  
   }
 }
 
 @media screen and (min-width: 576px) and (max-width: 1024px) {
   .card {
-    height: 75vh;
+    height: 70vh;
     width: 70vw;
     perspective: none;
   }
