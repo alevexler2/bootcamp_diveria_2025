@@ -1,0 +1,103 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text-color: #ffffff;
+    --background-color: #000000;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.container{
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.card{
+    height: 500px;
+    width: 350px;
+    border: 2px solid black;
+    border-radius: 1.5rem;
+    box-shadow: rgba(173, 173, 176, 0.25) 0px 20px 40px -12px, rgba(252, 252, 252, 0.3) 0px 8px 26px -18px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s ease;
+}
+
+.card:hover {
+    filter: grayscale(1) blur(0px);
+    box-shadow: rgba(173, 173, 176, 0.35) 0px 30px 50px -18px, rgba(252, 252, 252, 0.4) 0px 18px 36px -16px;
+    z-index: 1;
+}
+
+img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(0) blur(0px);
+    transition: all 1s ease;
+    z-index: 1;
+}
+
+.card:hover img{
+    filter: grayscale(1) blur(2px);
+    transform: scale(1.8) translateY(4%) rotate(5deg);
+    z-index: 0;
+    opacity: 0.5;
+}
+.card:nth-child(2):hover img{
+    filter: grayscale(1) blur(2px);
+    transform: scale(1.8) translateY(10%) rotate(-10deg);
+    z-index: 0;
+    opacity: 0.5;
+}
+
+.card__title{
+    position: absolute;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--background-color);
+    transition: all 2s ease;
+}
+
+.card:hover .card__title {
+    color: var(--text-color);
+    text-shadow: #000000 0px 0px 10px;
+}
+
+.card__icons{
+    position: absolute;
+    bottom: -100px;
+    padding: 1rem;
+    display: flex;
+    gap: 1rem;
+    transition: all 1s ease;
+    cursor: pointer;
+}
+
+.card__icons i{
+    font-size: 1.5rem;
+    color: var(--text-color);
+}
+
+.card:hover .card__icons {
+    bottom: 0;
+}
