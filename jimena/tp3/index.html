@@ -36,7 +36,7 @@
       </div>
     </nav>
     <main>
-      <h2>Eventos</h2>
+      <h2 class="fs-1 mb-3">Eventos</h2>
       <!-- Modal para agregar evento -->
       <div
         class="modal fade"
@@ -45,7 +45,7 @@
         aria-labelledby="addEventModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog text-start">
+        <div class="modal-dialog modal-dialog-centered text-start">
           <div class="modal-content">
             <form id="addEventForm">
               <div class="modal-header">
@@ -81,7 +81,9 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="eventCapacity" class="form-label">Capacidad</label>
+                  <label for="eventCapacity" class="form-label"
+                    >Capacidad</label
+                  >
                   <input
                     type="number"
                     class="form-control"
@@ -90,7 +92,9 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="reservationDeadline" class="form-label">Fecha límite de reservas</label>
+                  <label for="reservationDeadline" class="form-label"
+                    >Fecha límite de reservas</label
+                  >
                   <input
                     type="date"
                     class="form-control"
@@ -106,7 +110,11 @@
                 >
                   Cancelar
                 </button>
-                <button type="submit" class="btn btn-primary">
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="axiosPostEvent()"
+                >
                   Guardar evento
                 </button>
               </div>
@@ -114,15 +122,105 @@
           </div>
         </div>
       </div>
-      <button
-        class="add-event-btn"
-        data-bs-toggle="modal"
-        data-bs-target="#addEventModal"
+
+      <div id="output" class="events-grid">
+        <button
+          class="add-event-btn"
+          data-bs-toggle="modal"
+          data-bs-target="#addEventModal"
+        >
+          Agregar nuevo evento
+        </button>
+      </div>
+
+      <!-- Modal para ver detalles  -->
+      <div
+        class="modal fade"
+        id="detailsModal"
+        tabindex="-1"
+        aria-labelledby="detailsModalLabel"
+        aria-hidden="true"
       >
-        Agregar nuevo evento
-      </button>
-      <div id="output" class="events-grid"></div>
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="detailsModalLabel">
+                Detalles del evento
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div id="eventDetails" class="modal-body"></div>
+            <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#addReservationModal"
+              >
+                Agregar nueva reserva
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para agregar reserva -->
+      <div
+        class="modal fade"
+        id="addReservationModal"
+        tabindex="-1"
+        aria-labelledby="addReservationModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered text-start">
+          <div class="modal-content">
+            <form id="addReservationForm">
+              <div class="modal-header">
+                <h5 class="modal-title" id="addReservationModalLabel">
+                  Agregar nueva reserva
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="attendeeName" class="form-label"
+                    >Nombre del asistente</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="attendeeName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="attendeeEmail" class="form-label">Email</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="attendeeEmail"
+                    required
+                  />
+                </div>
+              </div>
+              <div id="eventAddReservationModalFooter" class="modal-footer">
+          
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
     </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
