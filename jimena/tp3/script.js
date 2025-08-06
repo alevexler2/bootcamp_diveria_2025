@@ -1,11 +1,12 @@
 const apiUrl = "https://localhost:7154/Events";
 
 function axiosGetEvents() {
-  const output = document.getElementById("output");
   axios
     .get(apiUrl)
     .then((res) => showEvents(res.data))
-    .catch((err) => (output.textContent = `Error con Axios: ${err.message}`));
+    .catch((err) => {
+      showAlert(`Error al cargar eventos: ${err.message}`, "danger");
+    });
 }
 
 function axiosPostEvent() {
@@ -22,16 +23,19 @@ function axiosPostEvent() {
     .then(function (response) {
       console.log(response);
       axiosGetEvents();
-
       const modal = document.getElementById("addEventModal");
       const modalInstance = bootstrap.Modal.getInstance(modal);
       modalInstance.hide();
-
+      
       form.reset();
+      showAlert("Evento creado con éxito");
     })
     .catch(function (error) {
       console.log(error);
-      alert("Error al crear el evento. Por favor intenta de nuevo.");
+      showAlert(
+        "Error al crear el evento. Por favor intenta de nuevo.",
+        "danger"
+      );
     });
 }
 
@@ -41,19 +45,22 @@ function axiosDeleteEvent(eventId) {
     .then(() => {
       console.log(`Evento ${eventId} eliminado`);
       axiosGetEvents();
+      showAlert("Evento eliminado con éxito");
     })
-    .catch((err) =>
-      console.error(`Error al eliminar el evento: ${err.message}`)
-    );
+    .catch((err) => {
+      console.error(`Error al eliminar el evento: ${err.message}`);
+      showAlert(`Error al eliminar el evento.`, "danger");
+    });
 }
 
 function axiosGetDetailsEvent(eventId) {
   axios
     .get(`${apiUrl}/${eventId}`)
     .then((res) => showEventDetails(res.data))
-    .catch((err) =>
-      console.error(`Error al obtener detalles del evento: ${err.message}`)
-    );
+    .catch((err) => {
+      console.error(`Error al obtener detalles del evento: ${err.message}`);
+      showAlert(`Error al obtener detalles del evento.`, "danger");
+    });
 }
 
 function axiosPostReservation(eventId) {
@@ -67,8 +74,8 @@ function axiosPostReservation(eventId) {
     })
     .then(function (response) {
       console.log(response);
+      showAlert("Reserva creada con éxito");
       axiosGetDetailsEvent(eventId);
-
       const modal = document.getElementById("addReservationModal");
       const modalInstance = bootstrap.Modal.getInstance(modal);
       modalInstance.hide();
@@ -77,7 +84,52 @@ function axiosPostReservation(eventId) {
     })
     .catch(function (error) {
       console.log(error);
-      alert("Error al crear la reserva. Por favor intenta de nuevo.");
+      showAlert(
+        "Error al crear la reserva. Por favor intenta de nuevo.",
+        "danger"
+      );
+    });
+}
+
+function axiosPatchEvent(eventId) {
+  const form = document.getElementById("updateEventForm");
+
+  const payload = {
+    title: form.eventName.value.trim(),
+    date: form.eventDate.value,
+    capacity: parseInt(form.eventCapacity.value),
+    reservationDeadline: form.reservationDeadline.value,
+  };
+
+  Object.keys(payload).forEach((key) => {
+    if (
+      payload[key] === null ||
+      payload[key] === undefined ||
+      payload[key] === "" ||
+      Number.isNaN(payload[key])
+    ) {
+      delete payload[key];
+    }
+  });
+
+  axios
+    .patch(`${apiUrl}/${eventId}`, payload)
+    .then(function (response) {
+      console.log(response);
+      axiosGetDetailsEvent(eventId);
+      const modal = document.getElementById("updateEventModal");
+      const modalInstance = bootstrap.Modal.getInstance(modal);
+      modalInstance.hide();
+      
+      form.reset();
+      showAlert("Evento actualizado con éxito");
+    })
+    .catch(function (error) {
+      console.log(error);
+      showAlert(
+        "Error al actualizar el evento. Por favor intenta de nuevo.",
+        "danger"
+      );
     });
 }
 
@@ -85,8 +137,7 @@ document.addEventListener("DOMContentLoaded", axiosGetEvents);
 
 function showEvents(events) {
   const output = document.getElementById("output");
-
-
+  output.innerHTML = ""; 
   if (!events || events.length === 0) {
     output.innerHTML = '<p class="no-events">No hay eventos disponibles</p>';
     return;
@@ -132,7 +183,8 @@ function showEvents(events) {
 
 function showEventDetails(event) {
   const modalBody = document.querySelector("#eventDetails");
-  const modalFooter = document.querySelector("#eventAddReservationModalFooter");
+  const addModalFooter = document.querySelector("#eventAddReservationModalFooter");
+  const updateModalFooter = document.querySelector("#updateEventModalFooter");
   console.log(event);
   modalBody.innerHTML = `
     <h3 class="modal-title">${event.title}</h3>
@@ -151,27 +203,48 @@ function showEventDetails(event) {
           ${
             event.reservations.length > 0
               ? event.reservations
-              .map(
-                (reservation) => `
+                  .map(
+                    (reservation) => `
         <li class="list-group-item">
           <p>Usuario: ${reservation.attendeeName}</p>
           <p>Email: ${reservation.attendeeEmail}</p>
         </li>
       `
-              )
-              .join("")
-          : '<li class="list-group-item">No hay reservas para este evento</li>'
-      }
+                  )
+                  .join("")
+              : '<li class="list-group-item">No hay reservas para este evento</li>'
+          }
     </ul>
     </div>
   `;
 
-  modalFooter.innerHTML = `
+  addModalFooter.innerHTML = `
   <button type="button" class="btn btn-outline-secondary" data-bs-target="#detailsModal" data-bs-toggle="modal">
       Cancelar
   </button>
-  <button type="submit" class="btn btn-primary" onclick="axiosPostReservation(${event.id})" data-bs-target="#detailsModal" data-bs-toggle="modal">
+  <button type="button" class="btn btn-primary" onclick="axiosPostReservation(${event.id})" data-bs-target="#detailsModal" data-bs-toggle="modal">
     Guardar reserva
   </button>
   `;
+  updateModalFooter.innerHTML = `
+  <button type="button" class="btn btn-outline-secondary" data-bs-target="#detailsModal" data-bs-toggle="modal">
+      Cancelar
+  </button>
+  <button type="button" class="btn btn-primary" onclick="axiosPatchEvent(${event.id})" data-bs-target="#detailsModal" data-bs-toggle="modal">
+    Guardar cambios
+  </button>
+`;
+
+}
+
+function showAlert(message, type = "success") {
+  const toastElement = document.getElementById('liveToast');
+  const toastBody = document.getElementById('toastMessage');
+
+  toastElement.className = `toast align-items-center text-white bg-${type} border-0`;
+
+  toastBody.textContent = message;
+
+  const toast = new bootstrap.Toast(toastElement);
+  toast.show();
 }

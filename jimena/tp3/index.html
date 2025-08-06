@@ -111,7 +111,7 @@
                   Cancelar
                 </button>
                 <button
-                  type="submit"
+                  type="button"
                   class="btn btn-primary"
                   onclick="axiosPostEvent()"
                 >
@@ -123,7 +123,7 @@
         </div>
       </div>
 
-      <div id="output" class="events-grid">
+      <div id="output-container" class="events-grid">
         <button
           class="add-event-btn"
           data-bs-toggle="modal"
@@ -131,6 +131,7 @@
         >
           Agregar nuevo evento
         </button>
+        <div id="output" class="events-grid"></div>
       </div>
 
       <!-- Modal para ver detalles  -->
@@ -156,6 +157,13 @@
             </div>
             <div id="eventDetails" class="modal-body"></div>
             <div class="modal-footer">
+              <button
+                class="btn btn-secondary"
+                data-bs-toggle="modal"
+                data-bs-target="#updateEventModal"
+              >
+                Editar evento
+              </button>
               <button
                 class="btn btn-secondary"
                 data-bs-toggle="modal"
@@ -212,10 +220,102 @@
                   />
                 </div>
               </div>
-              <div id="eventAddReservationModalFooter" class="modal-footer">
-          
-              </div>
+              <div
+                id="eventAddReservationModalFooter"
+                class="modal-footer"
+              ></div>
             </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal para editar evento -->
+      <div
+        class="modal fade"
+        id="updateEventModal"
+        tabindex="-1"
+        aria-labelledby="updateEventModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-dialog-centered text-start">
+          <div class="modal-content">
+            <form id="updateEventForm">
+              <div class="modal-header">
+                <h5 class="modal-title" id="updateEventModalLabel">
+                  Editar evento
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Cerrar"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="eventName" class="form-label"
+                    >Nombre del evento</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="eventName"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="eventDate" class="form-label">Fecha</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="eventDate"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="eventCapacity" class="form-label"
+                    >Capacidad</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="eventCapacity"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="reservationDeadline" class="form-label"
+                    >Fecha límite de reservas</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="reservationDeadline"
+                  />
+                </div>
+              </div>
+              <div
+                id="updateEventModalFooter"
+                class="modal-footer"
+              ></div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+        <div
+          id="liveToast"
+          class="toast align-items-center text-white bg-success border-0"
+          role="alert"
+          aria-live="assertive"
+          aria-atomic="true"
+        >
+          <div class="d-flex">
+            <div class="toast-body" id="toastMessage"></div>
+            <button
+              type="button"
+              class="btn-close btn-close-white me-2 m-auto"
+              data-bs-dismiss="toast"
+              aria-label="Cerrar"
+            ></button>
           </div>
         </div>
       </div>
