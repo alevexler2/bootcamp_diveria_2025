@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #00ffc8;
+
+  --text-color: white;
+  --text-color--opacity: #ccc;
+  --text-color--dark: #000;
+  --text-color--aquaNeon: #00ffc8;
+
+  --text-size--titlemobile: 3rem;
+  --text-size--titleDeskop: 9rem;
+  --text-size--description: 1rem;
+
+  --background-gradient-start: #0f2027;
+  --background-gradient-middle: #203a43;
+  --background-gradient-end: #2c5364;
+  --background-opacity: rgba(0, 0, 0, 0.6);
+  --whatsapp-green: #25D366;
+  --dark-navbar-bg: rgba(10, 10, 10, 0.85);
+
+  --animation-slideInLeft: slideInLeft 0.8s ease-out forwards;
+  --animation-fadeIn: fadeIn 1s ease; 
+  --animation-delay: 0.5s;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background:
+  linear-gradient(var(--background-opacity), var(--background-opacity)),
+  url('./assets/section.jpg') no-repeat center/cover;
+background-attachment: fixed;
+  color: var(--text-color);
+}
+
+/* === HERO SECTION === */
+.hero {
+  height: 100vh;
+  background:
+    linear-gradient(var(--background-opacity), var(--background-opacity)),
+    url('./assets/portada.webp') no-repeat center/cover;
+  background-attachment: fixed;
+}
+
+.hero-left {
+  animation: var(--animation-fadeIn);
+}
+
+.hero-right {
+  max-width: 600px;
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  animation: var(--animation-slideInLeft);
+  animation-delay: var(--animation-delay);
+  
+}
+
+.pretitle {
+  text-transform: uppercase;
+  font-size: var(--text-size--description);
+  color: var(--text-color--aquaNeon);
+  letter-spacing: 2px;
+}
+
+.hero-right h1 {
+  font-size: var(--text-size--titlemobile);
+  font-weight: 800;
+}
+
+.description {
+  font-size: var(--text-size--description);
+  color: var(--text-color--opacity);
+}
+
+.whatsapp-btn {
+  background-color: var(--whatsapp-green);
+  color: var(--text-color--dark);
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.whatsapp-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px var(--whatsapp-green);
+}
+
+/* Eventos */
+.section_hero {
+  height: 100vh;
+  /* border: 2px solid blue; */
+}
+
+.container_cards {
+  height: 80%;
+  overflow-y: auto;
+  padding-top: 1rem;
+  /* border: 2px solid black; */
+}
+
+.section_hero h2 {
+  font-size: 2rem;
+  color: var(--text-color--aquaNeon);
+}
+
+.event-card {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  height: 100%; /* Asegura que todas las tarjetas en una fila tengan la misma altura */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.event-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0,0,0,0.1);
+}
+.event-date {
+  color: #6c757d;
+  font-weight: 500;
+}
+.event-actions .btn {
+  margin-left: 0.25rem;
+}
+
+.form-control {
+  resize: none;
+}
+
+@media (min-width: 768px) {
+  .section_hero h2 {
+    font-size: 3rem;
+  }
+  .profile-img {
+    width: 30%;
+    border-radius: 20%;
+    filter: grayscale(100%) drop-shadow(-12px 8px 15px rgba(0, 255, 200, 0.1));
+  }
+
+}
+/* === ANIMACIONES === */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
