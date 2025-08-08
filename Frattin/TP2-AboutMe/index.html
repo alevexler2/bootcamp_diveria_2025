@@ -29,12 +29,7 @@
     <main class="container">
       <section id="sobre-mi" class="about">
         <h2>Sobre mi</h2>
-        <div>
-          <img
-            src="https://i.pinimg.com/236x/d7/7e/31/d77e31b4f7c02493d585c8fb34f6d956.jpg"
-            alt=""
-          />
-
+        <div class="about-me">
           <p>
             Mi nombre es Tomás Frattin, tengo 26 años y actualmente estudio
             Ingeniería en Sistemas de Información. Me crié en el campo, entre
@@ -43,8 +38,11 @@
             en una escuela técnica, decidí seguir mi camino en la Universidad
             Tecnológica Nacional.
           </p>
+          <img src="assets/indeed.jpg" alt="" />
         </div>
-        <div>
+
+        <div class="about-me">
+          <img src="assets/khala.jpg" alt="" />
           <p>
             Durante la pandemia hice una pausa en la carrera para explorar otros
             intereses: ahí me introduje en el desarrollo web, hice cursos como
@@ -87,7 +85,7 @@
               Me gusta cocinar y experimentar con nuevas recetas, siempre
               buscando opciones más saludables. Disfruto de la cocina como una
               forma de creatividad y bienestar. Además de que es una excelente
-              forma de compartir momentos con amigos y familia. <br />
+              forma de compartir momentos con amigos y familia.
               <strong>PD: Amo las pastas</strong>
             </p>
             <div class="hobby-img">
@@ -147,45 +145,55 @@
           nuevas tecnologías. Aquí hay algunos:
         </p>
         <div class="projects">
-          <article class="project-card">
+          <article class="project-card kollektivpolylog">
             <h3>KollectivePolilog</h3>
-            <div class="project-img">
-              <p>
-                Con unos amigos hemos desarrollado una landing page para un
-                centro cultural alemán.
-              </p>
-            </div>
-          </article>
-
-          <article class="project-card">
-            <h3>Focus App</h3>
-            Una app que empecé a desarrollar hace poco para poder concentrarse y
-            estudiar, con temporizador pomodoro, creador de notas, reproductor
-            de musica y mucho más.
-          </article>
-
-          <article class="project-card">
-            <h3>Inkspire</h3>
             <p>
-              Un e-commerce funcional desarrollado para una asignatura de
-              desarrollo de software full stack en la universidad.
+              Sitio web realizado junto a unos amigos para Kollektiv Polylog, un
+              colectivo de mujeres refugiadas, académicas y activistas en
+              Berlín. Visibilizan experiencias migrantes a través del arte, la
+              ciencia y el activismo, con libros, cortos documentales y
+              proyectos colaborativos.
             </p>
           </article>
 
-          <article class="project-card">
+          <article class="project-card focus-app">
+            <h3>Focus App</h3>
+            <p>
+              Aplicación web desarrollado a modo de proyecto personal para
+              fomentar la concentración y la productividad. Incluye un Dashboard
+              equipado con varias herramientas: temporizador Pomodoro, sistema
+              de notas, reproductor de música y wallpapers dinámicos.
+            </p>
+          </article>
+
+          <article class="project-card inkspire">
+            <h3>Inkspire</h3>
+            <p>
+              Proyecto de e-commerce funcional desarrollado como parte de una
+              asignatura de desarrollo de software full stack en la universidad.
+              Incluye funcionalidades clave para la gestión de productos,
+              carrito de compras y proceso de pago, aplicando buenas prácticas y
+              tecnologías modernas.
+            </p>
+          </article>
+
+          <article class="project-card posts">
             <h3>Posts de cuentos</h3>
             <p>
-              Un proyecto personal donde escribo y comparto cuentos cortos. Es
-              un espacio para explorar mi creatividad y mejorar mis habilidades
-              de escritura.
+              Proyecto personal dedicado a la creación y publicación de cuentos
+              cortos, diseñado como un espacio para explorar y desarrollar mi
+              creatividad literaria. Aquí comparto historias, experimento con
+              diferentes estilos narrativos y busco mejorar constantemente mis
+              habilidades de escritura.
             </p>
           </article>
         </div>
         <p>
-          Aunque me cueste admitirlo, por falta de tiempo debido al cursado y
-          la exigencia universitaria, algunos proyectos se retrasan o quedan
-          algo incompletos. Aun así, tengo una lista con muchas otras ideas que
-          me gustaría desarrollar, pero vamos paso a paso.
+          Me gusta desarrollar proyectos con un enfoque minimalista, priorizando
+          funcionalidad y diseño limpio. Por la carga universitaria, algunos
+          proyectos están en pausa, incluso los que no se muestran, pero sigo
+          motivado, sumando ideas y con ganas de retomarlos para seguir
+          aprendiendo y mejorando.
         </p>
       </section>
 
@@ -193,32 +201,36 @@
 
       <section id="contacto">
         <h2>Contacto</h2>
-        <p>
-          ¿Querés decirme algo, consultarme o simplemente saludar? Estoy siempre
-          abierto a nuevas charlas, proyectos o ideas. Completá el formulario y
-          te responderé lo antes posible.
-        </p>
-        <form action="https://formsubmit.co/TU_EMAIL_AQUI" method="POST">
-          <input type="text" name="name" placeholder="Nombre" required />
-          <input
-            type="email"
-            name="email"
-            placeholder="Correo electrónico"
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Escribe tu mensaje..."
-            rows="5"
-            required
-          ></textarea>
-          <button type="submit">Enviar</button>
-        </form>
+        <div class="contacto">
+          <div>
+            <p>
+              ¿Querés decirme algo, consultarme o simplemente saludar? Estoy
+              siempre abierto a nuevas charlas, proyectos o ideas. Completá el
+              formulario y te responderé lo antes posible.
+            </p>
+          </div>
+          <form action="https://formsubmit.co/tomasfrattin@gmail.com" method="POST">
+            <input type="text" name="name" placeholder="Nombre" required />
+            <input
+              type="email"
+              name="email"
+              placeholder="Correo electrónico"
+              required
+            />
+            <textarea
+              name="message"
+              placeholder="Escribe tu mensaje..."
+              rows="5"
+              required
+            ></textarea>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
       </section>
     </main>
 
-    <!-- <footer>
+    <footer>
       <p>&copy; 2025 Tomás Frattín</p>
-    </footer> -->
+    </footer>
   </body>
 </html>
