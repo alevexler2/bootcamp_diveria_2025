@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="container">
+    <header>
+      <nav class="navbar">
+        <a href="#get" class="highlight-get">GET</a>
+        <a href="#post" class="highlight-post">POST</a>
+        <a href="#update/delete" class="highlight-combined">
+          <span class="highlight-put" style="padding-right: 2rem">PUT</span>/
+          <span class="highlight-delete" style="padding-right: 2rem"
+            >DELETE</span
+          >
+        </a>
+      </nav>
+    </header>
+
+    <section id="get" class="get-section">
+      <article>
+        <h2 class="highlight-get">GET /events</h2>
+        <div class="article-container">
+          <div>
+            <p>
+              Este endpoint permite obtener una lista de eventos filtrados según
+              criterios opcionales.
+            </p>
+            <h3>Parámetros de consulta (opcionales):</h3>
+            <ul>
+              <li>
+                <strong>title</strong> (string): Filtra eventos cuyo título
+                contenga el texto especificado.
+              </li>
+              <li>
+                <strong>from</strong> (date): Fecha desde la cual se buscan
+                eventos (inclusive).
+              </li>
+              <li>
+                <strong>to</strong> (date): Fecha hasta la cual se buscan
+                eventos (inclusive).
+              </li>
+            </ul>
+            <p>
+              Si no se especifican parámetros, se devuelve la lista completa de
+              eventos. <br />A sí mismo se pueden utilizar uno, dos o los tres
+              parámetros para filtrar los eventos. <br />
+            </p>
+          </div>
+          <div class="form-get-all-events">
+            <form id="form-get-events">
+              <div class="form-title">
+                <label for="title">Título</label>
+                <input type="text" name="title" id="" />
+              </div>
+              <div class="dates-container">
+                <div class="form-group">
+                  <label for="from">Fecha Desde</label>
+                  <input type="date" name="from" id="from" />
+                </div>
+                <div class="form-group">
+                  <label for="to">Fecha Hasta</label>
+                  <input type="date" name="to" id="to" />
+                </div>
+              </div>
+              <button type="submit">GET</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="cards-get-events" class="cards-container">
+          <div class="card info-card">
+            <p>
+              Presione el botón <strong>GET</strong> para realizar la búsqueda.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h2 class="highlight-get">GET /events/{id}</h2>
+        <div class="article-container">
+          <div>
+            <p>
+              Este endpoint permite obtener un único evento a través de su ID
+              correspondiente.
+            </p>
+            <h3>Parámetro de consulta:</h3>
+            <ul>
+              <li>
+                <strong>ID</strong> (number): Filtra eventos cuyo ID sea el
+                número especificado.
+              </li>
+            </ul>
+            <p>
+              El parámetro es obligatorio y debe ser un número entero positivo.
+            </p>
+          </div>
+          <div class="form-get-all-events">
+            <form id="form-get-event-by-id">
+              <div class="form-title">
+                <label for="title">ID</label>
+                <input
+                  type="number"
+                  name="id"
+                  id="input-event-id"
+                  required
+                  value="1"
+                  min="1"
+                />
+              </div>
+              <button type="submit" id="btn-get-by-id">GET</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="cards-get-event-by-id" class="cards-container">
+          <div class="card info-card">
+            <p>
+              Presione el botón <strong>GET</strong> para realizar la búsqueda.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h2 class="highlight-get">GET /events/most-reserved</h2>
+        <div class="article-container">
+          <div>
+            <p>
+              Este endpoint permite obtener uno o varios eventos que tengan la
+              mayor cantidad de reservas hechas.
+            </p>
+            <h3>Este endpoint no requiere parámetros</h3>
+          </div>
+          <div class="form-get-all-events only-button">
+            <button type="button" id="btn-get-most-reserved">GET</button>
+          </div>
+        </div>
+
+        <div id="cards-get-most-reserved" class="cards-container">
+          <div class="card info-card">
+            <p>
+              Presione el botón <strong>GET</strong> para realizar la búsqueda.
+            </p>
+          </div>
+        </div>
+      </article>
+
+      <article>
+        <h2 class="highlight-get">GET /events/available</h2>
+        <div class="article-container">
+          <div>
+            <p>
+              Este endpoint devuelve todos los eventos que aún tienen cupos
+              disponibles, es decir, aquellos que no están completamente
+              reservados.
+            </p>
+            <h3>Este endpoint no requiere parámetros</h3>
+          </div>
+          <div class="form-get-all-events only-button">
+            <button type="button" id="btn-get-available">GET</button>
+          </div>
+        </div>
+
+        <div id="cards-get-available" class="cards-container">
+          <div class="card info-card">
+            <p>
+              Presione el botón <strong>GET</strong> para realizar la búsqueda.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="post">
+      <article>
+        <h2 class="highlight-post">POST /events</h2>
+        <div class="article-container">
+          <div>
+            <p>Este endpoint permite crear un nuevo evento.</p>
+            <h3>Parámetros de creación:</h3>
+            <ul>
+              <li>
+                <strong>title</strong> (string): Determina el Título del evento
+              </li>
+              <li>
+                <strong>date</strong> (date): Determina la Fecha del evento
+              </li>
+              <li>
+                <strong>capacity</strong> (number): Determina el cupo total
+              </li>
+            </ul>
+            <p>
+              Todos los parámetros son obligatorios y cada uno tiene una cierta
+              validación.
+            </p>
+          </div>
+          <div class="form-get-all-events">
+            <form id="form-post-event">
+              <div class="form-title">
+                <label for="title">Título</label>
+                <input type="text" name="title" id="" required />
+              </div>
+              <div class="dates-container">
+                <div class="form-group">
+                  <label for="date">Fecha</label>
+                  <input type="date" name="date" id="date" required />
+                </div>
+                <div class="form-group">
+                  <label for="capacity">Capacidad</label>
+                  <input
+                    type="number"
+                    name="capacity"
+                    id="capacity"
+                    min="1"
+                    value="1"
+                    required
+                  />
+                </div>
+              </div>
+              <button type="submit" id="btn-post-event">POST</button>
+            </form>
+          </div>
+        </div>
+
+        <div id="cards-post-event" class="cards-container">
+          <div class="card info-card">
+            <p>
+              Presione el botón <strong>POST</strong> para crear un nuevo
+              evento.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section id="update/delete">
+      <article>
+        <h2 class="highlight-put">PUT /events/{id}</h2>
+        <h2 class="highlight-delete">DELETE /events/{id}</h2>
+        <div class="article-container">
+          <div>
+            <p>
+              A continuación se integran dos enpoints utilizados tanto para
+              actualizar como para eliminar un evento existente.
+            </p>
+            <h3>Parámetros para actualizar:</h3>
+            <ul>
+              <li><strong>title</strong> (string): Nuevo título del evento</li>
+              <li><strong>date</strong> (date): Nueva fecha del evento</li>
+              <li><strong>capacity</strong> (number): Nuevo cupo total</li>
+            </ul>
+            <p>
+              Todos los parámetros son obligatorios para la actualización y
+              deben cumplir con las validaciones correspondientes.
+            </p>
+            <h3>Parámetros para eliminar:</h3>
+            <ul>
+              <li><strong>id</strong> (number): ID del evento a eliminar</li>
+            </ul>
+            <p>
+              La eliminación se realiza enviando el ID del evento como parámetro
+              en la URL.
+            </p>
+          </div>
+
+          <div class="form-get-all-events only-button">
+            <button type="button" id="btn-refresh-events">
+              Actualizar lista
+            </button>
+          </div>
+        </div>
+
+        <div id="cards-manage-events" class="cards-container">
+          <div class="card info-card">
+            <p>
+              Presione el botón <strong>Actualizar lista</strong> para cargar
+              los eventos.
+            </p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

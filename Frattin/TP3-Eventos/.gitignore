@@ -1,0 +1,35 @@
+# Node.js (por si usás npm o instalás paquetes como axios)
+node_modules/
+package-lock.json
+yarn.lock
+dist/
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Archivos temporales
+*.log
+*.tmp
+*.bak
+
+# Archivos de entorno
+.env
+.env.local
+.env.*.local
+
+# Cache
+.cache/
+*.cache
